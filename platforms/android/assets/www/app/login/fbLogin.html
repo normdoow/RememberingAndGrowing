@@ -1,0 +1,15 @@
+<ion-view view-title="Facebook Login">
+  <ion-content class="padding">
+    <h3 class="positive"> Discover whats new to you with <center>nuMi</center></h3>
+    <br>
+    <p>Please enter your browsing size</p>
+    <div ng-repeat="size in sizes">
+      <ion-radio ng-model="$parent.sizeVal" value="size" ng-value="size">{{size}}</ion-radio>
+    </div>
+    <br>
+    <a class="facebook-sign-in button button-block button-positive" ng-disabled="sizeVal == null" ng-click="facebookSignIn()">Login with Facebook</a>
+    <!--<div id="fb-login-button" class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" data-scope="public_profile,user_friends,email,user_about_me,user_likes,user_photos,user_posts,pages_messaging"></div>-->
+    <!--<a class="button button-block button-calm" ng-disabled="sizeVal == null" href="https://www.instagram.com/oauth/authorize/?client_id=e9d25fd3360140af82f53115180384e6&redirect_uri=http://localhost:8100/app/FbLogin&response_type=token">Login with Instagram</a>-->
+    <a class="button button-block button-calm" ng-disabled="sizeVal == null" ng-click="instagramLogin()">Login with Instagram</a>
+  </ion-content>
+</ion-view>

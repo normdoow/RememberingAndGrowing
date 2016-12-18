@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<base href="/"> <!-- this allows there to be no # in the url-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="app/css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- Angular Material includes -->
+    <script src="lib/angular-material/angular-material.js"></script>
+    <script src="lib/angular-aria/angular-aria.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
+    <!-- other packages -->
+    <script src="bower_components/ng-cordova-oauth/dist/ng-cordova-oauth.js"></script>
+
+
+    <!-- include the apps js here -->
+    <script src="app/app.js"></script>
+    <script src="app/controller.js"></script>
+    <script src="app/playlist/playlist.controller.js"></script>
+    <script src="app/playlists/playlists.controller.js"></script>
+    <script src="app/playlists/playlists.service.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/login/fbLogin.service.js"></script>
+    <script src="app/login/instagram.service.js"></script>
+    
+  
+  </head>
+
+  <body ng-app="template">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>
