@@ -1,0 +1,9 @@
+<ion-view view-title="List View">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="day in list" href="#/app/day/{{day.id}}">
+        {{day.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

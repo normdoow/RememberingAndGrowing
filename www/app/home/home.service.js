@@ -1,10 +1,10 @@
 'use strict';
 (function () {
     app
-    .service('PlaylistsService', PlaylistsService);
+    .service('HomeService', HomeService);
 
-    PlaylistsService.$inject = [];
-    function PlaylistsService() {
+    HomeService.$inject = [];
+    function HomeService() {
         
         return {
             serviceVar: "The service Var"

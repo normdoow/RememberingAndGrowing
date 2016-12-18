@@ -1,19 +1,19 @@
 'use strict';
 (function () {
     app
-    .controller('PlaylistsCtrl', PlaylistsCtrl);
+    .controller('HomeCtrl', HomeCtrl);
     
-    PlaylistsCtrl.$inject = ['$scope', 'PlaylistsService'];
-    function PlaylistsCtrl ($scope, PlaylistsService) {
+    HomeCtrl.$inject = ['$scope', 'HomeService'];
+    function HomeCtrl ($scope, HomeService) {
         
-        $scope.playlists = [
+        $scope.list = [
             { title: 'Reggae', id: 1 },
             { title: 'Chill', id: 2 },
             { title: 'Dubstep', id: 3 },
             { title: 'Indie', id: 4 },
             { title: 'Rap', id: 5 },
             { title: 'Cowbell', id: 6 },
-            { title: PlaylistsService.serviceVar, id: 7 }
+            { title: HomeService.serviceVar, id: 7 }
         ];
     }
 })();

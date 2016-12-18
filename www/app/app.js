@@ -40,11 +40,12 @@ var app = angular.module('template',
       controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: '/search',
+    .state('app.home', {
+      url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'app/search/search.html'
+          templateUrl: 'app/home/home.html',
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -58,27 +59,27 @@ var app = angular.module('template',
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.listView', {
+      url: '/listView',
       views: {
         'menuContent': {
-          templateUrl: 'app/playlists/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'app/listView/listView.html',
+          controller: 'ListViewCtrl'
         }
       }
     })
 
-    .state('app.single', {
-      url: '/playlists/:playlistId',
+    .state('app.day', {
+      url: '/day/:dayId',
       views: {
         'menuContent': {
-          templateUrl: 'app/playlist/playlist.html',
-          controller: 'PlaylistCtrl'
+          templateUrl: 'app/day/day.html',
+          controller: 'DayCtrl'
         }
       }
     });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/home');
     //$locationProvider.html5Mode(true);
   });
 })();
