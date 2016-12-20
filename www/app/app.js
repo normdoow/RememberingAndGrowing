@@ -36,8 +36,7 @@ var app = angular.module('template',
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'app/menu/menu.html',
-      controller: 'AppCtrl'
+      templateUrl: 'app/menu/menu.html'
     })
 
     .state('app.home', {

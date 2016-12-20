@@ -1,0 +1,14 @@
+
+/*removes the background fo certain boxes*/
+.item .item-content {
+  background-color: transparent !important;
+}
+
+/*for the right arrowed icons on the list*/
+.item-icon-right .icon {
+    font-size: 100%;
+}
+
+.item-background {
+    background-color: #33cd5f;
+}

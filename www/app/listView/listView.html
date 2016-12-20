@@ -1,8 +1,11 @@
 <ion-view view-title="List View">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="day in list" href="#/app/day/{{day.id}}">
-        {{day.title}}
+      <ion-item class="item item-icon-right {{$index == 3 ? 'item-background':'';}}" ng-repeat="day in list" href="#/app/day/{{day.id}}">
+        <div layout="row">
+          <h2 class="dark">{{$index + 1}} &nbsp;&nbsp;&nbsp;&nbsp; {{day.title}}</h2>
+          <i class="icon ion-chevron-right" ></i>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
