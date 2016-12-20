@@ -7,18 +7,22 @@
         "files": {}
     },
     "installed_plugins": {
-        "com.phonegap.plugins.facebookconnect": {
-            "APP_ID": "1057203841045531",
-            "APP_NAME": "thriftr",
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.templateapp177408"
         },
-        "cordova-plugin-inappbrowser": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+        },
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.ionicframework.templateapp177408"
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.ionicframework.templateapp177408"
         },
-        "cordova-plugin-console": {
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.templateapp177408"
         }
     },

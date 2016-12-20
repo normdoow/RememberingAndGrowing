@@ -1,0 +1,16 @@
+/* extra padding for checkbox */
+.check-padding {
+    padding-top: 35px;
+}
+
+.content-padding {
+  padding-top: 10px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 10px;
+}
+
+/* size for the setting icon */
+.gear-size {
+    font-size: 170%;
+}

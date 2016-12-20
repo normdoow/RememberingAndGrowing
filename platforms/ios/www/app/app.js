@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-'use stric';
+'use strict';
 //include modules here
-var app = angular.module('template', 
+var app = angular.module('template',
                           ['ionic', 
                             'ngMaterial',
                             'ngCordovaOauth']);
@@ -36,15 +36,15 @@ var app = angular.module('template',
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'app/menu/menu.html',
-      controller: 'AppCtrl'
+      templateUrl: 'app/menu/menu.html'
     })
 
-    .state('app.search', {
-      url: '/search',
+    .state('app.home', {
+      url: '/home',
       views: {
         'menuContent': {
-          templateUrl: 'app/search/search.html'
+          templateUrl: 'app/home/home.html',
+          controller: 'HomeCtrl'
         }
       }
     })
@@ -58,27 +58,27 @@ var app = angular.module('template',
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.listView', {
+      url: '/listView',
       views: {
         'menuContent': {
-          templateUrl: 'app/playlists/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'app/listView/listView.html',
+          controller: 'ListViewCtrl'
         }
       }
     })
 
-    .state('app.single', {
-      url: '/playlists/:playlistId',
+    .state('app.day', {
+      url: '/day/:dayId',
       views: {
         'menuContent': {
-          templateUrl: 'app/playlist/playlist.html',
-          controller: 'PlaylistCtrl'
+          templateUrl: 'app/day/day.html',
+          controller: 'DayCtrl'
         }
       }
     });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/app/home');
     //$locationProvider.html5Mode(true);
   });
 })();
