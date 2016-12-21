@@ -18,11 +18,10 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close href="#/app/home">
-          Home
-        </ion-item>
-        <ion-item menu-close href="#/app/listView">
-          List View
+        <ion-item menu-close class="item {{item.selected ? 'select' : '';}}" ng-repeat="item in list" href="{{item.url}}">
+          <div layout="row" ng-click="selectItem($index)">
+            {{item.text}}
+          </div>
         </ion-item>
         <!--<ion-item menu-close href="#/app/Settings">
           Settings

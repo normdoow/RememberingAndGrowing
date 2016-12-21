@@ -11,6 +11,30 @@
 }
 
 /* size for the setting icon */
-.gear-size {
+.gear-icon {
     font-size: 170%;
+}
+
+.book-icon {
+    font-size: 150% !important;
+}
+
+/* for the tab where the devotion content goes */
+.devotion-tab {
+    overflow-y: auto; 
+    height: 523px; 
+    bottom: 0px;
+}
+
+/* stuff for the notes textarea */
+.text-area {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    background-color: #fafafa;
+}
+
+/* some space for ios*/
+.some-space {
+    padding: 23px;
 }

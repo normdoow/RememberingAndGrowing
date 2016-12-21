@@ -2,32 +2,33 @@
   <ion-nav-buttons side="right" layout="row">
     <!--<ion-checkbox></ion-checkbox>-->
     <!--<div layout-align="end center">-->
-      <i class="icon ion-gear-a gear-size" ng-click=""></i>
+      <i class="icon ion-gear-a gear-icon" ng-click=""></i>
       <!--<button class="button icon ion-gear-a"></button>-->
       <!--<ion-checkbox ng-model="blah"></ion-checkbox>-->
       <md-checkbox ng-model="blah" class="md-primary check-padding" aria-label="Completed"></md-checkbox>
     <!--</div>-->
   </ion-nav-buttons>
-  <div class="">
+  <div class="" id="listRect">
     <h1 class="title">bar-light</h1>
-    <!--<button class="button button-block button-stable">2 Corinthians 5 - 6</button>-->
-    <h2 class="padding">Bible reading</h2>
+    <div class="item item-divider">
+      Bible Reading
+    </div>
     <ion-list>
-      <ion-item class="item item-icon-right" href="#/app/day/2">
-        <div layout="row">
+      <ion-item class="item item-icon-left item-icon-right {{bibleSelected ? 'select' : '';}}" href="#/app/day/2">
+        <div layout="row" ng-click="selectItem()">
+          <i class="icon ion-ios-book book-icon" ></i>
           <h2 class="dark">2 Corinthians 5 - 6</h2>
-          <i class="icon ion-chevron-right" ></i>
+          <i class="icon ion-chevron-right"></i>
         </div>
       </ion-item>
     </ion-list>
   </div>
-    
 
   <!--<ion-content class="tabs-content">-->
     <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="yes">
       <md-tab label="Devotion">
-        <div >
-          <md-content class="content-padding" style="overflow-y: auto; height: 450px; bottom: 0px;">
+        <div flex layout="row">
+          <md-content flex class="content-padding devotion-tab" elem-ready="setHeight()">
             <h2>Devotion Title</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
             <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
@@ -36,8 +37,8 @@
         </div>
       </md-tab>
       <md-tab label="Notes">
-        <md-content class="md-padding" style="overflow-y: auto; height: auto;">
-          <textarea rows="50" cols="40">
+        <md-content class="content-padding devotion-tab boxsizingBorder" elem-ready="setHeight()">
+          <textarea class="text-area" ng-model="notes"  ng-change="textChanged()">
           </textarea>
         </md-content>
 
