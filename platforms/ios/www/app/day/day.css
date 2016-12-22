@@ -1,6 +1,13 @@
 /* extra padding for checkbox */
 .check-padding {
-    padding-top: 35px;
+    padding-top: 40px;
+}
+
+.gear-padding {
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 8px;
 }
 
 .content-padding {
@@ -27,15 +34,14 @@
 }
 
 /* stuff for the notes textarea */
-.boxsizing-border {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
 .text-area {
     width: 100%;
     height: 100%;
     font-size: 16px;
     background-color: #fafafa;
+}
+
+/* some space for ios*/
+.some-space {
+    padding: 23px;
 }

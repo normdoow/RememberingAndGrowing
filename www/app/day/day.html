@@ -1,12 +1,7 @@
-<ion-view view-title="Day">
-  <ion-nav-buttons side="right" layout="row">
-    <!--<ion-checkbox></ion-checkbox>-->
-    <!--<div layout-align="end center">-->
-      <i class="icon ion-gear-a gear-icon" ng-click=""></i>
-      <!--<button class="button icon ion-gear-a"></button>-->
-      <!--<ion-checkbox ng-model="blah"></ion-checkbox>-->
-      <md-checkbox ng-model="blah" class="md-primary check-padding" aria-label="Completed"></md-checkbox>
-    <!--</div>-->
+<ion-view view-title="Day {{getDevoNum()}}">
+  <ion-nav-buttons side="right" >
+      <i class="icon ion-gear-a gear-icon gear-padding" ng-click=""></i>
+      <md-checkbox ng-model="blah" class="md-primary check-padding" aria-label="Completed" ng-click="showDoneAlert()"></md-checkbox>
   </ion-nav-buttons>
   <ion-pane>
   <div class="some-space">
