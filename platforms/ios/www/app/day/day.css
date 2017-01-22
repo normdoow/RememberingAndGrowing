@@ -45,3 +45,24 @@
 .some-space {
     padding: 23px;
 }
+
+/* overwrite the select margin */
+md-select {
+    margin: 0px !important;
+    margin-right: 10px !important;
+}
+
+.small-font {
+    font-size: 13px;
+    margin: 0px !important;
+}
+
+.normal-font {
+    font-size: 16px;
+    margin: 0px !important;
+}
+
+.large-font {
+    font-size: 20px;
+    margin: 0px !important;
+}

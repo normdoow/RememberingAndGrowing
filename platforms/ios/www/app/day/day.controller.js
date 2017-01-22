@@ -3,15 +3,34 @@
     app
     .controller('DayCtrl', DayCtrl);
 
-    DayCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$location', '$window', '$ionicPopup'];
-    function DayCtrl ($scope, $stateParams, $timeout, $location, $window, $ionicPopup) {
+    DayCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$location', '$window', '$ionicPopup', 'DayService'];
+    function DayCtrl ($scope, $stateParams, $timeout, $location, $window, $ionicPopup, DayService) {
 
         $scope.bibleSelected = false;           //used for the background to be selected or not
-        $scope.notes = 'dlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfs';
+        $scope.fontSelectSize = '16';
+        $scope.notes = 'dlkfsdlkfjaslkdfjslkdjfs dlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslk djfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdsl kjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjsl kdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkd fjslkd jfsdlkfjdslk jfdslkjfdlkfsdlkfjaslkdf jslkdjfsdlkfjdslkjfdsl kjfdlkfsdlkfja';
+        $scope.dayObject = DayService.getDayObject();
+
+        //functions
+        $scope.getDevoNum = getDevoNum;
+        
+        //init the service
+        DayService.setPage(getDevoNum());
+
+        //watches for the object with all the data to changes
+        $scope.$watch('dayObject[0].title', function() {      //have to test for title because that changes
+            var devotionData = $scope.dayObject[0];
+            if(devotionData) {
+                $scope.title = devotionData.title;
+                $scope.devotionText = devotionData.text;
+                $scope.reading = devotionData.reading;
+                $scope.focusWord = devotionData.focusWord;
+            }
+        });
 
         $scope.textChanged = function() {
             console.log($scope.notes);
-        }
+        };
 
         $scope.setHeight = function () {
             var listRect = document.getElementById("listRect");
@@ -45,9 +64,14 @@
             });
         };
 
-        $scope.getDevoNum = function() {
+        $scope.fontSizeChange = function() {
+            console.log($scope.fontSelectSize);
+        }
+
+        function getDevoNum() {
             var url = $location.path();
             return url.replace('/app/day/', '');
-        };
+        }
+
     };
 })();
