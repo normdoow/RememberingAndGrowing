@@ -3,8 +3,8 @@
     app
     .controller('HomeCtrl', HomeCtrl);
     
-    HomeCtrl.$inject = ['$scope', 'HomeService'];
-    function HomeCtrl ($scope, HomeService) {
+    HomeCtrl.$inject = ['$scope', 'HomeService', 'ListViewService'];    //ListView is in here to make json load faster
+    function HomeCtrl ($scope, HomeService, ListViewService) {
         
         $scope.list = [
             { title: 'Reggae', id: 1 },

@@ -32,7 +32,7 @@
             serviceVar: "The service Var",
             getListViewObject: function() {
                 return listViewObject;
-            }
+            },
         }
     }
 })();
