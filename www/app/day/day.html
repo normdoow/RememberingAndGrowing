@@ -1,7 +1,7 @@
 <ion-view view-title="Day {{getDevoNum()}}">
   <ion-nav-buttons side="right" >
       <!--<i class="icon ion-gear-a gear-icon gear-padding" ng-click=""></i>-->
-      <md-select ng-model="fontSelectSize" ng-change="fontSizeChange()">
+      <md-select ng-model="$parent.fontSelectSize" ng-change="fontSizeChange()">
         <md-option ng-value="13">
           <p class="small-font">Aa</p>
         </md-option>
@@ -12,8 +12,8 @@
           <p class="large-font">Aa</p>
         </md-option>
       </md-select>
-      <md-checkbox ng-model="blah" class="md-primary check-padding" aria-label="Completed" ng-click="showDoneAlert()"></md-checkbox>
-  </ion-nav-buttons>
+      <md-checkbox ng-model="$parent.devoCompleteCheckbox" class="md-primary check-padding" aria-label="Completed" ng-change="clickedCheckbox()"></md-checkbox>
+    </ion-nav-buttons>
   <ion-pane>
   <div class="some-space">
   </div>
@@ -42,8 +42,9 @@
       <div flex layout="row">
         <md-content flex class="content-padding devotion-tab" elem-ready="setHeight()">
           <h2>{{title}}</h2>
-          
-          <p>{{devotionText}}</p>
+          <p ng-class="{{(fontSelectSize == 13)? 'small-font' : ''}}">
+            {{devotionText}}
+          </p>
         </md-content>
       </div>
     </md-tab>

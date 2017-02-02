@@ -3,7 +3,7 @@
     <ion-list>
       <ion-item class="item item-icon-left item-icon-right {{day.selected ? 'select' : '';}}" ng-repeat="day in list" href="#/app/day/{{day.id}}">
         <div layout="row" ng-click="selectItem($index)">
-          <i ng-if="$index == 3" class="icon ion-checkmark-circled check-icon"></i>
+          <i ng-if="isDevotionCompleted('id' + ($index + 1))" class="icon ion-checkmark-circled check-icon"></i>
           <h2 class="dark">{{$index + 1}} &nbsp;&nbsp;&nbsp;&nbsp; {{day.title}}</h2>
           <i class="icon ion-chevron-right" ></i>
         </div>

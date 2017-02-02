@@ -8,11 +8,13 @@
 
         $scope.bibleSelected = false;           //used for the background to be selected or not
         $scope.fontSelectSize = '16';
-        $scope.notes = 'dlkfsdlkfjaslkdfjslkdjfs dlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslk djfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdsl kjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjsl kdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkdfjslkdjfsdlkfjdslkjfdslkjfdlkfsdlkfjaslkd fjslkd jfsdlkfjdslk jfdslkjfdlkfsdlkfjaslkdf jslkdjfsdlkfjdslkjfdsl kjfdlkfsdlkfja';
+        $scope.notes = getNotes();
+        $scope.devoCompleteCheckbox = isDevotionCompleted();
         $scope.dayObject = DayService.getDayObject();
 
         //functions
         $scope.getDevoNum = getDevoNum;
+        $scope.clickedCheckbox = clickedCheckbox;
         
         //init the service
         DayService.setPage(getDevoNum());
@@ -30,6 +32,7 @@
 
         $scope.textChanged = function() {
             console.log($scope.notes);
+            setNotes($scope.notes);
         };
 
         $scope.setHeight = function () {
@@ -52,7 +55,7 @@
         };
 
         //alert that shows the user that they completed a lesson
-        $scope.showDoneAlert = function() {
+        function showDoneAlert() {
             //TODO: save this data to somewhere
             var alertPopup = $ionicPopup.alert({
                 title: 'Well Done!',
@@ -68,9 +71,49 @@
             console.log($scope.fontSelectSize);
         }
 
+        function clickedCheckbox() {
+            if($scope.devoCompleteCheckbox) {
+                setDevoCompleted();
+                showDoneAlert();
+            } else {
+                setDevoUnCompleted();
+            }
+        }
+
         function getDevoNum() {
             var url = $location.path();
             return url.replace('/app/day/', '');
+        }
+
+        //sets if a devo was completed in storage
+        function setDevoCompleted() {
+            window.localStorage.setItem('id' + getDevoNum(), 'true');
+        }
+
+        //sets if a devo was completed in storage
+        function setDevoUnCompleted() {
+            window.localStorage.setItem('id' + getDevoNum(), 'false');
+        }
+
+        //returns if a devotion was completed or not
+        function isDevotionCompleted() {
+            var val = window.localStorage.getItem('id' + getDevoNum());
+            if(val && val !== undefined && val != "false") {
+                return true;
+            }
+            return false;
+        }
+
+        function setNotes(value) {
+            window.localStorage.setItem('notes' + getDevoNum(), value);
+        }
+
+        function getNotes() {
+            var val = window.localStorage.getItem('notes' + getDevoNum());
+            if(val && val !== undefined && val != "false") {
+                return val;
+            }
+            return "";
         }
 
     };

@@ -15,6 +15,7 @@
         function loadJSON() {
             $http.get('app/json/daysWithDevotion.json').success(function(data) {
                 jsonData = data;
+                console.log(jsonData);
                 setListViewObject();
             });
         }
@@ -32,7 +33,7 @@
             serviceVar: "The service Var",
             getListViewObject: function() {
                 return listViewObject;
-            }
+            },
         }
     }
 })();
