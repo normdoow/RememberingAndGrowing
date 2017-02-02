@@ -1,0 +1,60 @@
+<ion-view view-title="Day {{getDevoNum()}}">
+  <ion-nav-buttons side="right" >
+      <!--<i class="icon ion-gear-a gear-icon gear-padding" ng-click=""></i>-->
+      <md-select ng-model="$parent.fontSelectSize" ng-change="fontSizeChange()">
+        <md-option ng-value="13">
+          <p class="small-font">Aa</p>
+        </md-option>
+        <md-option selected ng-value="16">
+          <p class="normal-font">Aa</p>
+        </md-option>
+        <md-option ng-value="20">
+          <p class="large-font">Aa</p>
+        </md-option>
+      </md-select>
+      <md-checkbox ng-model="$parent.devoCompleteCheckbox" class="md-primary check-padding" aria-label="Completed" ng-change="clickedCheckbox()"></md-checkbox>
+    </ion-nav-buttons>
+  <ion-pane>
+  <div class="some-space">
+  </div>
+  <div class="" id="listRect">
+    <div class="item item-divider some-space">
+      Bible Reading
+    </div>
+    <ion-list>
+      <ion-item class="item item-icon-left item-icon-right {{bibleSelected ? 'select' : '';}}" href="#/app/day/2">
+        <div layout="row" ng-click="selectItem()">
+          <i class="icon ion-ios-book book-icon" ></i>
+          <h2 class="dark">{{reading}}</h2>
+          <i class="icon ion-chevron-right"></i>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div layout="row">
+          <h2>Focus Word: {{focusWord}}</h2>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="yes">
+    <md-tab label="Devotion">
+      <div flex layout="row">
+        <md-content flex class="content-padding devotion-tab" elem-ready="setHeight()">
+          <h2>{{title}}</h2>
+          <p ng-class="{{(fontSelectSize == 13)? 'small-font' : ''}}">
+            {{devotionText}}
+          </p>
+        </md-content>
+      </div>
+    </md-tab>
+    <md-tab label="Notes">
+      <md-content class="content-padding devotion-tab">
+        <textarea class="text-area" ng-model="notes" ng-change="textChanged()">
+        </textarea>
+      </md-content>
+
+    </md-tab>
+  </md-tabs>
+  </ion-pane>
+</ion-view>

@@ -83,3 +83,9 @@ var app = angular.module('template',
     //$locationProvider.html5Mode(true);
   });
 })();
+
+//sets the inapp browser on device ready
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    window.open = cordova.InAppBrowser.open;
+}

@@ -1,0 +1,25 @@
+
+/*removes the background fo certain boxes*/
+.item .item-content {
+  background-color: transparent !important;
+}
+
+/*for the right arrowed icons on the list*/
+.item-icon-right .icon {
+    font-size: 100%;
+}
+
+.item-background {
+    background-color: #33cd5f;
+}
+
+/* for the circular icon on the list */
+.check-icon {
+    font-size: 130% !important;
+    color : #33cd5f;
+}
+
+/* shown when an item is selected */
+.select {
+    background-color: #d9d9d9;
+}

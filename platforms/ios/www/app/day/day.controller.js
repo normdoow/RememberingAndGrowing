@@ -15,6 +15,7 @@
         //functions
         $scope.getDevoNum = getDevoNum;
         $scope.clickedCheckbox = clickedCheckbox;
+        $scope.openBibleGateWay = openBibleGateWay;
         
         //init the service
         DayService.setPage(getDevoNum());
@@ -78,6 +79,11 @@
             } else {
                 setDevoUnCompleted();
             }
+        }
+
+        function openBibleGateWay() {
+            var bibleSearch = $scope.reading.replace(" ", "+");
+            cordova.InAppBrowser.open("https://www.biblegateway.com/passage/?search=" + bibleSearch + "&version=ESV", 'location=yes');
         }
 
         function getDevoNum() {

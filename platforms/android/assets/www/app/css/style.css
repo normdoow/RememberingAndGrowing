@@ -1,1 +1,6 @@
 /* Empty. Add your own CSS if you like */
+
+/* formats for everything */
+p {
+    font-size: 16px;
+}
