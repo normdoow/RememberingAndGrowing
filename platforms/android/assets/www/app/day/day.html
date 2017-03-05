@@ -17,13 +17,13 @@
   <ion-pane>
   <div class="some-space">
   </div>
-  <div class="" id="listRect">
+  <div ng-show="!keyboardShowing" id="listRect">
     <div class="item item-divider some-space">
       Bible Reading
     </div>
     <ion-list>
-      <ion-item class="item item-icon-left item-icon-right {{bibleSelected ? 'select' : '';}}" href="#/app/day/2">
-        <div layout="row" ng-click="selectItem()">
+      <ion-item class="item item-icon-left item-icon-right {{bibleSelected ? 'select' : '';}}">
+        <div layout="row" ng-click="openBibleGateWay()">
           <i class="icon ion-ios-book book-icon" ></i>
           <h2 class="dark">{{reading}}</h2>
           <i class="icon ion-chevron-right"></i>
@@ -42,7 +42,7 @@
       <div flex layout="row">
         <md-content flex class="content-padding devotion-tab" elem-ready="setHeight()">
           <h2>{{title}}</h2>
-          <p ng-class="{{(fontSelectSize == 13)? 'small-font' : ''}}">
+          <p ng-class="{{fontSelectSize == 13? 'small-font' : '';}}">
             {{devotionText}}
           </p>
         </md-content>
