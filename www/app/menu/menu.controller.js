@@ -17,5 +17,9 @@
                 $scope.list[index].selected = false;
             }, 500);
         };
+
+        $scope.openBLEWebsite = function () {
+            cordova.InAppBrowser.open("http://www.bleabundantlife.com/buy-journal", 'location=yes');
+        }
     };
 })();
