@@ -3,14 +3,15 @@
     app
     .controller('ListViewCtrl', ListViewCtrl);
     
-    ListViewCtrl.$inject = ['$scope', 'ListViewService', '$timeout'];
-    function ListViewCtrl ($scope, ListViewService, $timeout) {
+    ListViewCtrl.$inject = ['$scope', 'ListViewService', '$timeout', '$location', '$ionicScrollDelegate'];
+    function ListViewCtrl ($scope, ListViewService, $timeout, $location, $ionicScrollDelegate) {
 
         //functions
         $scope.isDevotionCompleted = isDevotionCompleted;
 
         $scope.$watch(ListViewService.getListViewObject(), function() {
             $scope.list = ListViewService.getListViewObject();
+            goTo(ListViewService.getCurrentDevoNum());
         });
 
         //selects the item from the list that just got clicked
@@ -20,6 +21,11 @@
                 $scope.list[index].selected = false;
             }, 500);
         };
+
+        function goTo(id) {
+            $location.hash(id);
+            $ionicScrollDelegate.anchorScroll();
+        }
 
         //returns if a devotion was completed or not
         function isDevotionCompleted(devotionId) {

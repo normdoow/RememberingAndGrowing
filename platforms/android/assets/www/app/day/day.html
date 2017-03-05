@@ -42,7 +42,7 @@
       <div flex layout="row">
         <md-content flex class="content-padding devotion-tab" elem-ready="setHeight()">
           <h2>{{title}}</h2>
-          <p ng-class="{{fontSelectSize == 13? 'small-font' : '';}}">
+          <p ng-class="{{(fontSelectSize == 13)? 'small-font' : ''}}">
             {{devotionText}}
           </p>
         </md-content>

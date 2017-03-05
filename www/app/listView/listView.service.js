@@ -41,7 +41,7 @@
         function getCurrentDevoNum() {
             for(var k = 0; k < listViewObject.length; k++) {
                 if(!isDevotionCompletedWithNum(k + 1)) {
-                    return k + 1;
+                    return Math.max(k - 2, 1);
                 }
             }
         }

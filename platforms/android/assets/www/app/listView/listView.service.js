@@ -29,11 +29,29 @@
             }
         }
 
+        //returns if a devotion was completed or not
+        function isDevotionCompletedWithNum(num) {
+            var val = window.localStorage.getItem('id' + num);
+            if(val && val !== undefined && val != "false") {
+                return true;
+            }
+            return false;
+        }
+
+        function getCurrentDevoNum() {
+            for(var k = 0; k < listViewObject.length; k++) {
+                if(!isDevotionCompletedWithNum(k + 1)) {
+                    return k + 1;
+                }
+            }
+        }
+
         return {
             serviceVar: "The service Var",
             getListViewObject: function() {
                 return listViewObject;
             },
+            getCurrentDevoNum: getCurrentDevoNum
         }
     }
 })();

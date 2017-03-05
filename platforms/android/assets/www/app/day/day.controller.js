@@ -49,8 +49,6 @@
             var elems = document.getElementsByClassName("devotion-tab");
             for (var i = 0; i < elems.length; i++) {
                 elems[i].style.height = height + "px";
-                // elems[i].style.overflowY = "auto";
-                // eles[i],style.bottom = "0px";
             }
         };
 
