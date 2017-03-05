@@ -14,10 +14,6 @@
             goTo(ListViewService.getCurrentDevoNum());
         });
 
-        if($scope.list != null) {
-            goTo(ListViewService.getCurrentDevoNum());
-        }
-
         //selects the item from the list that just got clicked
         $scope.selectItem = function (index) {
             $scope.list[index].selected = true;
