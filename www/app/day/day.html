@@ -23,7 +23,7 @@
     </div>
     <ion-list>
       <ion-item class="item item-icon-left item-icon-right {{bibleSelected ? 'select' : '';}}">
-        <div layout="row" ng-click="openBibleGateWay()">
+        <div layout="row" on-touch="openBibleGateWay()">
           <i class="icon ion-ios-book book-icon" ></i>
           <h2 class="dark">{{reading}}</h2>
           <i class="icon ion-chevron-right"></i>

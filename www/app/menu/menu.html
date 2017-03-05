@@ -18,13 +18,13 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close class="item {{item.selected ? 'select' : '';}}" ng-repeat="item in list" href="{{item.url}}">
-          <div layout="row" ng-click="selectItem($index)">
+        <ion-item menu-close class="item {{item.selected ? 'select' : '';}}" ng-repeat="item in list"">
+          <div layout="row" nav-clear menu-close ui-sref="{{item.path}}" on-touch="selectItem($index)">
             {{item.text}}
           </div>
         </ion-item>
         <ion-item>
-          <div layout="row" ng-click="openBLEWebsite()">
+          <div layout="row" on-touch="openBLEWebsite()">
             Checkout Hard Back Journal
           </div>
         </ion-item>

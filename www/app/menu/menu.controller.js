@@ -2,12 +2,12 @@
 (function () {
     app
     .controller('MenuCtrl', MenuCtrl);
-    MenuCtrl.$inject = ['$scope', '$stateParams', '$timeout'];
-    function MenuCtrl ($scope, $stateParams, $timeout) {
+    MenuCtrl.$inject = ['$scope', '$stateParams', '$timeout', '$location', '$state'];
+    function MenuCtrl ($scope, $stateParams, $timeout, $location, $state) {
 
         $scope.list = [
-            { text: 'Home', url:'#/app/home', selected: false },
-            { text: 'List View', url:'#/app/listView', selected: false }
+            { text: 'Home', path:'app.home', selected: false },
+            { text: 'List View', path:'app.listView', selected: false }
         ];
 
         //selects the item from the list that just got clicked
@@ -20,6 +20,12 @@
 
         $scope.openBLEWebsite = function () {
             cordova.InAppBrowser.open("http://www.bleabundantlife.com/buy-journal", 'location=yes');
+        }
+
+        $scope.goToUrl = function (url, index) {
+            $scope.selectItem(index)
+            $location.path('app/listView');
+            $location.replace();
         }
     };
 })();
