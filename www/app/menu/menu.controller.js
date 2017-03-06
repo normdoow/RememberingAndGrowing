@@ -22,6 +22,10 @@
             cordova.InAppBrowser.open("http://www.bleabundantlife.com/buy-journal", 'location=yes');
         }
 
+        $scope.openBLEWebsiteBlog = function () {
+            cordova.InAppBrowser.open("http://www.bleabundantlife.com/blog", 'location=yes');
+        }
+
         $scope.goToUrl = function (url, index) {
             $scope.selectItem(index)
             $location.path('app/listView');
