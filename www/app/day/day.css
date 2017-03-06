@@ -55,14 +55,17 @@ md-select {
 .small-font {
     font-size: 13px;
     margin: 0px !important;
+    line-height: 108%;
 }
 
 .normal-font {
     font-size: 16px;
     margin: 0px !important;
+    line-height: 128%;
 }
 
 .large-font {
     font-size: 20px;
     margin: 0px !important;
+    line-height: 150%;
 }
