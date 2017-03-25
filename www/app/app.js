@@ -88,4 +88,54 @@ var app = angular.module('template',
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     window.open = cordova.InAppBrowser.open;
+
+    cordova.plugins.notification.local.hasPermission(function (granted) {
+      console.log("the value of granted is " + granted);
+      if(granted) {
+          setNotificationForNext30Days();
+      } else {
+        cordova.plugins.notification.local.registerPermission(function (granted) {
+          if(granted) {
+            setNotificationForNext30Days();
+          }
+        });
+      }
+    });
+}
+
+function setNotificationForNext30Days() {
+  var today = new Date();
+
+  var year = today.getFullYear();
+  var month = today.getMonth();
+  var date = today.getDate();
+
+  for(var i = 0; i < 40; i++){
+        var day = new Date(year, month, date + i);
+        day.setHours(9);
+        if(day.getDay() != 0 && day.getDay() != 6) {
+          // cancelNotification(i);
+          scheduleNotification(day, i);
+          console.log("the day is" + day);
+        }
+  }
+}
+
+function scheduleNotification(date, id) {
+  //cancel the notification if it exists first
+  // cordova.plugins.notification.local.cancel(id, function () {
+    //create the new notification
+    var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
+    console.log("the date is!!!!" + date);
+
+    cordova.plugins.notification.local.schedule({
+        id: id,
+        title: "Remember and Growing",
+        message: "Don't forget to read the next devotion and do your Bible reading!",
+        at: date,
+        sound: null,
+        icon: "app/img/logo.png",
+        smallIcon:"/img/logo.png"
+    });
+  // }, scope);
 }

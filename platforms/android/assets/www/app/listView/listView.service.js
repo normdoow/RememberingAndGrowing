@@ -8,6 +8,7 @@
         
         var jsonData;               //this is the json object that will be used through out the app
         var listViewObject = [];
+        var currentDevo;
 
         loadJSON();
 
@@ -17,6 +18,7 @@
                 jsonData = data;
                 console.log(jsonData);
                 setListViewObject();
+                setCurrentDevo();
             });
         }
 
@@ -29,6 +31,10 @@
             }
         }
 
+        function setCurrentDevo() {
+            currentDevo = listViewObject[getCurrentDevoNum()];
+        }
+
         //returns if a devotion was completed or not
         function isDevotionCompletedWithNum(num) {
             var val = window.localStorage.getItem('id' + num);
@@ -38,10 +44,18 @@
             return false;
         }
 
+        function getCurrentDevoNumListView() {
+            for(var k = 0; k < listViewObject.length; k++) {
+                if(!isDevotionCompletedWithNum(k + 1)) {
+                    return Math.max(k - 2, 1);
+                }
+            }
+        }
+
         function getCurrentDevoNum() {
             for(var k = 0; k < listViewObject.length; k++) {
                 if(!isDevotionCompletedWithNum(k + 1)) {
-                    return k + 1;
+                    return k;
                 }
             }
         }
@@ -51,7 +65,10 @@
             getListViewObject: function() {
                 return listViewObject;
             },
-            getCurrentDevoNum: getCurrentDevoNum
+            getCurrentDevoNumListView: getCurrentDevoNumListView,
+            getCurrentDevo: function () {
+                return currentDevo;
+            }
         }
     }
 })();

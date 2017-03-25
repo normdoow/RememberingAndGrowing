@@ -23,7 +23,7 @@
     </div>
     <ion-list>
       <ion-item class="item item-icon-left item-icon-right {{bibleSelected ? 'select' : '';}}">
-        <div layout="row" ng-click="openBibleGateWay()">
+        <div layout="row" on-touch="openBibleGateWay()" on-release="deselectItem()">
           <i class="icon ion-ios-book book-icon" ></i>
           <h2 class="dark">{{reading}}</h2>
           <i class="icon ion-chevron-right"></i>
@@ -42,15 +42,15 @@
       <div flex layout="row">
         <md-content flex class="content-padding devotion-tab" elem-ready="setHeight()">
           <h2>{{title}}</h2>
-          <p ng-class="{{(fontSelectSize == 13)? 'small-font' : ''}}">
+          <p class="{{(fontSelectSize == 13)? 'small-font' : '';}} {{(fontSelectSize == 16)? 'normal-font' : '';}} {{(fontSelectSize == 20)? 'large-font' : '';}}">
             {{devotionText}}
           </p>
         </md-content>
       </div>
     </md-tab>
-    <md-tab label="Notes">
+    <md-tab label="Journal Entry">
       <md-content class="content-padding devotion-tab">
-        <textarea class="text-area" ng-model="notes" ng-change="textChanged()">
+        <textarea class="text-area {{(fontSelectSize == 13)? 'small-font' : '';}} {{(fontSelectSize == 16)? 'normal-font' : '';}} {{(fontSelectSize == 20)? 'large-font' : '';}}" ng-model="notes" ng-change="textChanged()">
         </textarea>
       </md-content>
 

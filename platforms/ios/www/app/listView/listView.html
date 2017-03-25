@@ -1,8 +1,8 @@
 <ion-view view-title="List View">
   <ion-content>
     <ion-list>
-      <ion-item class="item item-icon-left item-icon-right {{day.selected ? 'select' : '';}}" ng-repeat="day in list" href="#/app/day/{{day.id}}">
-        <div layout="row" ng-click="selectItem($index)">
+      <ion-item id="{{$index + 1}}" class="item item-icon-left item-icon-right {{day.selected ? 'select' : '';}}" ng-repeat="day in list" href="#/app/day/{{day.id}}">
+        <div layout="row" on-touch="selectItem($index)" on-release="deselectItem($index)">
           <i ng-if="isDevotionCompleted('id' + ($index + 1))" class="icon ion-checkmark-circled check-icon"></i>
           <h2 class="dark">{{$index + 1}} &nbsp;&nbsp;&nbsp;&nbsp; {{day.title}}</h2>
           <i class="icon ion-chevron-right" ></i>

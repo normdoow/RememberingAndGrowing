@@ -64,9 +64,10 @@
         //selects the item from the list that just got clicked
         $scope.selectItem = function () {
             $scope.bibleSelected = true;
-            $timeout(function () {
-                $scope.bibleSelected = false;
-            }, 500);
+        };
+
+        $scope.deselectItem = function () {
+            $scope.bibleSelected = false;
         };
 
         //alert that shows the user that they completed a lesson

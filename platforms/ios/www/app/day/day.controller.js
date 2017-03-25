@@ -11,6 +11,7 @@
         $scope.notes = getNotes();
         $scope.devoCompleteCheckbox = isDevotionCompleted();
         $scope.dayObject = DayService.getDayObject();
+        $scope.keyboardShowing = false;
 
         //functions
         $scope.getDevoNum = getDevoNum;
@@ -19,6 +20,10 @@
         
         //init the service
         DayService.setPage(getDevoNum());
+
+        //events for the keyboard
+        window.addEventListener('native.keyboardshow', keyboardShowHandler);
+        window.addEventListener('native.keyboardhide', keyboardHideHandler);
 
         //watches for the object with all the data to changes
         $scope.$watch('dayObject[0].title', function() {      //have to test for title because that changes
@@ -47,12 +52,22 @@
             }
         };
 
+        function setTabsHeightWithKeyboard(keyboardHeight) {
+            var bodyRect = document.body.getBoundingClientRect();
+            var height = bodyRect.bottom - 90;
+            var elems = document.getElementsByClassName("devotion-tab");
+            for (var i = 0; i < elems.length; i++) {
+                elems[i].style.height = height + "px";
+            }
+        }
+
         //selects the item from the list that just got clicked
         $scope.selectItem = function () {
             $scope.bibleSelected = true;
-            $timeout(function () {
-                $scope.bibleSelected = false;
-            }, 500);
+        };
+
+        $scope.deselectItem = function () {
+            $scope.bibleSelected = false;
         };
 
         //alert that shows the user that they completed a lesson
@@ -82,6 +97,7 @@
         }
 
         function openBibleGateWay() {
+            $scope.selectItem();
             var bibleSearch = $scope.reading.replace(" ", "+");
             cordova.InAppBrowser.open("https://www.biblegateway.com/passage/?search=" + bibleSearch + "&version=ESV", 'location=yes');
         }
@@ -120,6 +136,25 @@
                 return val;
             }
             return "";
+        }
+
+        //this event fires when the keyboard shows
+        function keyboardShowHandler(e){
+            console.log('Keyboard height is: ' + e.keyboardHeight);
+            $scope.keyboardShowing = true;
+            // window.scrollTo(0, 0);
+            $timeout(function() {
+                setTabsHeightWithKeyboard(e.keyboardHeight);
+            }, 500);    
+        }
+
+        // This event fires when the keyboard will hide
+        function keyboardHideHandler(e){
+            $scope.keyboardShowing = false;
+            $timeout(function () {
+                $scope.setHeight();
+            }, 500);
+            
         }
 
     };

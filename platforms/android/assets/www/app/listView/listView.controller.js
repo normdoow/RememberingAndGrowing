@@ -11,16 +11,17 @@
 
         $scope.$watch(ListViewService.getListViewObject(), function() {
             $scope.list = ListViewService.getListViewObject();
-            goTo(ListViewService.getCurrentDevoNum());
+            goTo(ListViewService.getCurrentDevoNumListView());
         });
 
         //selects the item from the list that just got clicked
         $scope.selectItem = function (index) {
             $scope.list[index].selected = true;
-            $timeout(function () {
-                $scope.list[index].selected = false;
-            }, 500);
         };
+
+        $scope.deselectItem = function (index) {
+            $scope.list[index].selected = false;
+        }
 
         function goTo(id) {
             $location.hash(id);

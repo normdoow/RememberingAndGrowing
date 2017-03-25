@@ -1,5 +1,12 @@
 <ion-view view-title="Home">
-  <ion-content>
-    <h1>Home</h1>
-  </ion-content>
+  <ion-pane>
+    <ion-content class= "padding">
+      <br></br>
+      <h1><center>My Journal: Remembering and Growing</center></h1>
+      <center><img src="app/img/logo.png" alt="logo" style="width:199px;height:250px;"></center>
+      <button class="button button-block button-calm" on-touch="goToDay('app/day/' + currentDevo.id)">
+        Next Day - {{currentDevo.id}} - {{currentDevo.title}}
+      </button>
+    </ion-content>
+  </ion-pane>
 </ion-view>
