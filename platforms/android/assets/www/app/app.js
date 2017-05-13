@@ -110,7 +110,7 @@ function setNotificationForNext30Days() {
   var month = today.getMonth();
   var date = today.getDate();
 
-  for(var i = 0; i < 30; i++){
+  for(var i = 0; i < 40; i++){
         var day = new Date(year, month, date + i);
         day.setHours(9);
         if(day.getDay() != 0 && day.getDay() != 6) {
