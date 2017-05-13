@@ -13,6 +13,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -25,69 +29,18 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"FacebookConnectPlugin\"><param name=\"android-package\" value=\"org.apache.cordova.facebook.ConnectPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://m.facebook.com\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://graph.facebook.com\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://api.facebook.com\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://*.fbcdn.net\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<access origin=\"https://*.akamaihd.net\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"android-minSdkVersion\" value=\"15\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Keyboard\"><param name=\"android-package\" value=\"io.ionic.keyboard.IonicKeyboard\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
                 }
             },
-            "res/values/facebookconnect.xml": {
-                "parents": {
-                    "/*": []
-                }
-            },
             "AndroidManifest.xml": {
                 "parents": {
-                    "application": [
-                        {
-                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationId\" android:value=\"@string/fb_app_id\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<meta-data android:name=\"com.facebook.sdk.ApplicationName\" android:value=\"@string/fb_app_name\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|screenLayout|screenSize|orientation\" android:label=\"@string/fb_app_name\" android:name=\"com.facebook.FacebookActivity\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\" />",
-                            "count": 1
-                        }
-                    ],
                     "/manifest/application": [
                         {
                             "xml": "<receiver android:exported=\"false\" android:name=\"de.appplant.cordova.plugin.localnotification.TriggerReceiver\" />",
@@ -129,55 +82,36 @@
                         }
                     ]
                 }
-            },
-            "res/values/strings.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<string name=\"fb_app_id\">1057203841045531</string>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<string name=\"fb_app_name\">thriftr</string>",
-                            "count": 1
-                        }
-                    ]
-                }
             }
         }
     },
     "installed_plugins": {
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
+        },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
-        },
-        "com.phonegap.plugins.facebookconnect": {
-            "APP_ID": "1057203841045531",
-            "APP_NAME": "thriftr",
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
         },
-        "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
         },
         "de.appplant.cordova.plugin.local-notification": {
-            "PACKAGE_NAME": "com.ionicframework.templateapp177408"
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.myjournalrememberingandgrowing"
         }
     },
     "dependent_plugins": {},
@@ -188,6 +122,15 @@
             "pluginId": "cordova-plugin-device",
             "clobbers": [
                 "device"
+            ]
+        },
+        {
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
             ]
         },
         {
@@ -204,32 +147,6 @@
             "pluginId": "cordova-plugin-statusbar",
             "clobbers": [
                 "window.StatusBar"
-            ]
-        },
-        {
-            "id": "ionic-plugin-keyboard.keyboard",
-            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-            "pluginId": "ionic-plugin-keyboard",
-            "clobbers": [
-                "cordova.plugins.Keyboard"
-            ],
-            "runs": true
-        },
-        {
-            "id": "com.phonegap.plugins.facebookconnect.FacebookConnectPlugin",
-            "file": "plugins/com.phonegap.plugins.facebookconnect/www/facebook-native.js",
-            "pluginId": "com.phonegap.plugins.facebookconnect",
-            "clobbers": [
-                "facebookConnectPlugin"
-            ]
-        },
-        {
-            "id": "cordova-plugin-inappbrowser.inappbrowser",
-            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-            "pluginId": "cordova-plugin-inappbrowser",
-            "clobbers": [
-                "cordova.InAppBrowser.open",
-                "window.open"
             ]
         },
         {
@@ -258,18 +175,26 @@
                 "cordova.plugins.notification.local.core",
                 "plugin.notification.local.core"
             ]
+        },
+        {
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
+            "clobbers": [
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
         }
     ],
     "plugin_metadata": {
+        "cordova-plugin-app-event": "1.2.0",
         "cordova-plugin-console": "1.0.4",
         "cordova-plugin-device": "1.1.3",
+        "cordova-plugin-inappbrowser": "1.6.1",
         "cordova-plugin-splashscreen": "4.0.0",
         "cordova-plugin-statusbar": "2.2.0",
         "cordova-plugin-whitelist": "1.3.0",
-        "ionic-plugin-keyboard": "2.2.1",
-        "com.phonegap.plugins.facebookconnect": "1.7.1.3",
-        "cordova-plugin-inappbrowser": "1.5.0",
-        "cordova-plugin-app-event": "1.2.0",
-        "de.appplant.cordova.plugin.local-notification": "0.8.4"
+        "de.appplant.cordova.plugin.local-notification": "0.8.4",
+        "ionic-plugin-keyboard": "2.2.1"
     }
 }

@@ -43,7 +43,7 @@
 
 /* some space for ios*/
 .some-space {
-    padding-top: 30px;      /* 40px for IOS */
+    padding-top: 30px;      /* 40px for IOS, 30px for android */
 }
 
 /* overwrite the select margin */

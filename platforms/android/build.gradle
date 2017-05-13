@@ -30,7 +30,7 @@ buildscript {
     // http://tools.android.com/tech-docs/new-build-system/version-compatibility
     // and https://issues.apache.org/jira/browse/CB-8143
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:2.2.3'
     }
 }
 
@@ -88,7 +88,6 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "com.phonegap.plugins.facebookconnect/templateapp177408-facebook-minsdk-check.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -250,7 +249,6 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     debugCompile(project(path: "CordovaLib", configuration: "debug"))
     releaseCompile(project(path: "CordovaLib", configuration: "release"))
-    compile "com.facebook.android:facebook-android-sdk:4.11.+"
     compile "com.android.support:support-v4:+"
     // SUB-PROJECT DEPENDENCIES END
 }
@@ -269,7 +267,7 @@ def promptForReleaseKeyPassword() {
 
 gradle.taskGraph.whenReady { taskGraph ->
     taskGraph.getAllTasks().each() { task ->
-        if (task.name == 'validateReleaseSigning') {
+        if (task.name == 'validateReleaseSigning' || task.name == 'validateSigningRelease') {
             promptForReleaseKeyPassword()
         }
     }

@@ -9,6 +9,15 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-inappbrowser.inappbrowser",
+        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+        "pluginId": "cordova-plugin-inappbrowser",
+        "clobbers": [
+            "cordova.InAppBrowser.open",
+            "window.open"
+        ]
+    },
+    {
         "id": "cordova-plugin-splashscreen.SplashScreen",
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "pluginId": "cordova-plugin-splashscreen",
@@ -22,32 +31,6 @@ module.exports = [
         "pluginId": "cordova-plugin-statusbar",
         "clobbers": [
             "window.StatusBar"
-        ]
-    },
-    {
-        "id": "ionic-plugin-keyboard.keyboard",
-        "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
-        "pluginId": "ionic-plugin-keyboard",
-        "clobbers": [
-            "cordova.plugins.Keyboard"
-        ],
-        "runs": true
-    },
-    {
-        "id": "com.phonegap.plugins.facebookconnect.FacebookConnectPlugin",
-        "file": "plugins/com.phonegap.plugins.facebookconnect/www/facebook-native.js",
-        "pluginId": "com.phonegap.plugins.facebookconnect",
-        "clobbers": [
-            "facebookConnectPlugin"
-        ]
-    },
-    {
-        "id": "cordova-plugin-inappbrowser.inappbrowser",
-        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-        "pluginId": "cordova-plugin-inappbrowser",
-        "clobbers": [
-            "cordova.InAppBrowser.open",
-            "window.open"
         ]
     },
     {
@@ -76,21 +59,29 @@ module.exports = [
             "cordova.plugins.notification.local.core",
             "plugin.notification.local.core"
         ]
+    },
+    {
+        "id": "ionic-plugin-keyboard.keyboard",
+        "file": "plugins/ionic-plugin-keyboard/www/android/keyboard.js",
+        "pluginId": "ionic-plugin-keyboard",
+        "clobbers": [
+            "cordova.plugins.Keyboard"
+        ],
+        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-plugin-app-event": "1.2.0",
     "cordova-plugin-console": "1.0.4",
     "cordova-plugin-device": "1.1.3",
+    "cordova-plugin-inappbrowser": "1.6.1",
     "cordova-plugin-splashscreen": "4.0.0",
     "cordova-plugin-statusbar": "2.2.0",
     "cordova-plugin-whitelist": "1.3.0",
-    "ionic-plugin-keyboard": "2.2.1",
-    "com.phonegap.plugins.facebookconnect": "1.7.1.3",
-    "cordova-plugin-inappbrowser": "1.5.0",
-    "cordova-plugin-app-event": "1.2.0",
-    "de.appplant.cordova.plugin.local-notification": "0.8.4"
+    "de.appplant.cordova.plugin.local-notification": "0.8.4",
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });
